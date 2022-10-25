@@ -10,6 +10,8 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import { Button, Image } from 'react-bootstrap';
 import { FaUserCircle } from 'react-icons/fa';
 import { toast } from 'react-toastify';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -92,13 +94,21 @@ const Header = () => {
                       &nbsp;&nbsp; &nbsp;&nbsp;
                       <Link to="/profile">
                         {user?.photoURL ? (
-                          <Image
-                            roundedCircle
-                            src={user?.photoURL}
-                            style={{ width: '40px', height: '40px' }}
-                          ></Image>
+                          <>
+                            <OverlayTrigger
+                              key="bottom"
+                              placement="bottom"
+                              overlay={<Tooltip>{user?.displayName}</Tooltip>}
+                            >
+                              <Image
+                                roundedCircle
+                                src={user?.photoURL}
+                                style={{ width: '40px', height: '40px' }}
+                              ></Image>
+                            </OverlayTrigger>
+                          </>
                         ) : (
-                          <FaUserCircle size={32} />
+                          <FaUserCircle size={36} />
                         )}
                       </Link>
                     </>
