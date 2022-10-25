@@ -1,0 +1,13 @@
+.nav-items {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-items a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-items a.active {
+  color: aqua;
+}
