@@ -140,7 +140,6 @@ const Header = () => {
                       <Link to="/login">
                         <Button variant="success">Login</Button>
                       </Link>
-                      &nbsp;
                       <Link to="/register">
                         <Button variant="info">Register</Button>
                       </Link>

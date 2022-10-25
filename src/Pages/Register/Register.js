@@ -10,7 +10,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { BsGithub } from 'react-icons/bs';
 
 const Register = () => {
-  const { createUser, googleSignIn, updateUserProfile } =
+  const { createUser, googleSignIn, githubSignIn, updateUserProfile } =
     useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -45,6 +45,23 @@ const Register = () => {
         const user = result.user;
         console.log(user);
         toast.success('Account Created Successfully');
+
+        navigate('/');
+      })
+      .catch((error) => {
+        console.error(error);
+        toast.error(error.message);
+      });
+  };
+
+  const handleGithubSignIn = () => {
+    githubSignIn()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        toast.success('Account Created Successfully');
+
+        navigate('/');
       })
       .catch((error) => {
         console.error(error);
@@ -135,7 +152,11 @@ const Register = () => {
               <span>Continue with Google</span>
             </Button>
 
-            <Button className=" rounded " variant="outline-dark">
+            <Button
+              onClick={handleGithubSignIn}
+              className=" rounded "
+              variant="outline-dark"
+            >
               <BsGithub size={20} className="me-3 mb-1" />
               <span>Continue with Github</span>
             </Button>
