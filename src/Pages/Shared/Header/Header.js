@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Header.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -6,8 +6,17 @@ import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import logo from '../../../assets/images/logo.png';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
+import { Button, Image } from 'react-bootstrap';
+import { FaUserCircle } from 'react-icons/fa';
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut();
+  };
+
   return (
     <>
       {['md'].map((expand) => (
@@ -69,6 +78,40 @@ const Header = () => {
                   <NavLink to="/faq">FAQ</NavLink>
                   <NavLink to="/checkout">Checkout</NavLink>
                 </Nav>
+
+                <>
+                  {user?.email ? (
+                    <>
+                      <Link to="/login">
+                        <Button onClick={handleLogOut} variant="info">
+                          Log Out
+                        </Button>
+                      </Link>
+                      &nbsp;&nbsp; &nbsp;&nbsp;
+                      <Link to="/profile">
+                        {user?.photoURL ? (
+                          <Image
+                            roundedCircle
+                            src={user?.photoURL}
+                            style={{ width: '40px', height: '40px' }}
+                          ></Image>
+                        ) : (
+                          <FaUserCircle size={32} />
+                        )}
+                      </Link>
+                    </>
+                  ) : (
+                    <>
+                      <Link to="/login">
+                        <Button variant="success">Login</Button>
+                      </Link>
+                      &nbsp;
+                      <Link to="/register">
+                        <Button variant="info">Register</Button>
+                      </Link>
+                    </>
+                  )}
+                </>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
