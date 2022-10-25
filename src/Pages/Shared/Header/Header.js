@@ -12,9 +12,13 @@ import { FaUserCircle } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
+import { HiSun } from 'react-icons/hi';
+import { BiMoon } from 'react-icons/bi';
+import { useState } from 'react';
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [darkMode, setDarkMode] = useState(true);
 
   const handleLogOut = () => {
     logOut();
@@ -23,7 +27,7 @@ const Header = () => {
 
   return (
     <>
-      {['md'].map((expand) => (
+      {['lg'].map((expand) => (
         <Navbar
           key={expand}
           bg="dark"
@@ -81,17 +85,30 @@ const Header = () => {
                   <NavLink to="/blog">Blog</NavLink>
                   <NavLink to="/faq">FAQ</NavLink>
                   <NavLink to="/checkout">Checkout</NavLink>
+
+                  <div
+                    onClick={() => setDarkMode(!darkMode)}
+                    style={{ marginLeft: 'auto !important' }}
+                  >
+                    {darkMode ? (
+                      <HiSun
+                        className="text-white"
+                        size={32}
+                        style={{ cursor: 'pointer' }}
+                      />
+                    ) : (
+                      <BiMoon
+                        className="text-white"
+                        size={32}
+                        style={{ cursor: 'pointer' }}
+                      />
+                    )}
+                  </div>
                 </Nav>
 
-                <>
+                <Nav className="user-profile-and-logout mt-lg-0">
                   {user?.email ? (
                     <>
-                      <Link to="/login">
-                        <Button onClick={handleLogOut} variant="info">
-                          Log Out
-                        </Button>
-                      </Link>
-                      &nbsp;&nbsp; &nbsp;&nbsp;
                       <Link to="/profile">
                         {user?.photoURL ? (
                           <>
@@ -108,8 +125,14 @@ const Header = () => {
                             </OverlayTrigger>
                           </>
                         ) : (
-                          <FaUserCircle size={36} />
+                          <FaUserCircle size={36} title={user?.displayName} />
                         )}
+                      </Link>
+
+                      <Link to="/login">
+                        <Button onClick={handleLogOut} variant="info">
+                          Log Out
+                        </Button>
                       </Link>
                     </>
                   ) : (
@@ -123,7 +146,7 @@ const Header = () => {
                       </Link>
                     </>
                   )}
-                </>
+                </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>

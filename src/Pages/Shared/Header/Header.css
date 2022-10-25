@@ -12,3 +12,10 @@
 .nav-items a.active {
   color: aqua;
 }
+
+.user-profile-and-logout {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}

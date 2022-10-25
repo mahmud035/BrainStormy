@@ -37,7 +37,7 @@ const Login = () => {
       });
   };
 
-  console.log(userEmail);
+  // console.log(userEmail);
   const handlePasswordReset = () => {
     console.log(userEmail);
     passwordReset(userEmail)
