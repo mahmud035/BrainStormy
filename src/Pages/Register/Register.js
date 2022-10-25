@@ -4,29 +4,34 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { FcGoogle } from 'react-icons/fc';
 import { BsGithub } from 'react-icons/bs';
 
 const Register = () => {
-  const { createUser, googleSignIn } = useContext(AuthContext);
+  const { createUser, googleSignIn, updateUserProfile } =
+    useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const form = e.target;
     const name = form.name.value;
+    const photoURL = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    const confirmPassword = form.confirm.value;
-    console.log(name, email, password, confirmPassword);
+    console.log(name, photoURL, email, password);
 
     createUser(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
         toast.success('Account Created Successfully');
+
+        navigate('/');
+        handleUpdateUserProfile(name, photoURL);
       })
       .catch((error) => {
         console.error(error);
@@ -47,6 +52,20 @@ const Register = () => {
       });
   };
 
+  const handleUpdateUserProfile = (name, photoURL) => {
+    const profile = {
+      displayName: name,
+      photoURL: photoURL,
+    };
+    updateUserProfile(profile)
+      .then(() => {
+        toast.success('Profile updated');
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <div className="container form-page pt-5">
       <div className="pt-5 px-4 form-container ">
@@ -58,6 +77,12 @@ const Register = () => {
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Full Name </Form.Label>
             <Form.Control type="text" name="name" placeholder="User Name " />
+            <Form.Text className="text-muted"></Form.Text>
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Photo URL </Form.Label>
+            <Form.Control type="text" name="photo" placeholder="Photo URL " />
             <Form.Text className="text-muted"></Form.Text>
           </Form.Group>
 
@@ -83,22 +108,11 @@ const Register = () => {
             <Form.Text className="text-muted"></Form.Text>
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Confirm Password</Form.Label>
-            <Form.Control
-              type="password"
-              name="confirm"
-              placeholder="Confirm Password"
-              required
-            />
-            <Form.Text className="text-muted"></Form.Text>
-          </Form.Group>
-
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Check type="checkbox" label="Check me out" />
           </Form.Group>
           <Button className="d-block w-100" variant="primary" type="submit">
-            Sign Up
+            Register
           </Button>
         </Form>
 

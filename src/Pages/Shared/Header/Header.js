@@ -9,12 +9,14 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import { Button, Image } from 'react-bootstrap';
 import { FaUserCircle } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
 
   const handleLogOut = () => {
     logOut();
+    toast.warn('You just logged out!');
   };
 
   return (

@@ -60,7 +60,7 @@ const Login = () => {
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control
-              onBlue={(e) => setUserEmail(e.target.value)}
+              onChange={(e) => setUserEmail(e.target.value)}
               type="email"
               name="email"
               placeholder="Enter email"
@@ -92,7 +92,7 @@ const Login = () => {
 
         <p className="text-center py-2">
           <small className="text-muted">
-            Don't have an account? <Link to="/sign-up">Create an account</Link>
+            Don't have an account? <Link to="/register">Create an account</Link>
           </small>
         </p>
       </div>
