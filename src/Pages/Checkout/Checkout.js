@@ -1,10 +1,14 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 import './Checkout.css';
 
 const Checkout = () => {
+  const course = useLoaderData();
+  const { title } = course;
+
   return (
     <div>
-      <h1>Checkout Component</h1>
+      <h2>{title}</h2>
     </div>
   );
 };

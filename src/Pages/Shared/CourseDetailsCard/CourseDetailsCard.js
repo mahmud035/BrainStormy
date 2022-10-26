@@ -120,7 +120,7 @@ const CourseDetailsCard = ({ course }) => {
           </div>
 
           <div className="my-5 d-flex justify-content-center">
-            <Link to="/checkout">
+            <Link to={`/checkout/${_id}`}>
               <Button variant="info">Get Premium Access</Button>
             </Link>
           </div>

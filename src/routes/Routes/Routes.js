@@ -52,12 +52,14 @@ const router = createBrowserRouter([
         element: <FAQ></FAQ>,
       },
       {
-        path: '/checkout',
+        path: '/checkout/:id',
         element: (
           <PrivateRoutes>
             <Checkout></Checkout>
           </PrivateRoutes>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/checkout/${params.id}`),
       },
       {
         path: '/login',
