@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './LeftSideBar.css';
 
 const LeftSideBar = () => {
@@ -18,7 +19,11 @@ const LeftSideBar = () => {
       <h4>Top Categories</h4>
       <div>
         {categories.map((category, index) => (
-          <p key={index}>{category.name}</p>
+          <p key={index}>
+            <Link to={`/category/${category.id}`} className="category-name">
+              {category.name}
+            </Link>
+          </p>
         ))}
       </div>
     </div>

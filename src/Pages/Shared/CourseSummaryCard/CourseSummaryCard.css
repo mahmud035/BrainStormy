@@ -1,0 +1,4 @@
+.course-summary-card:hover {
+  background-color: rgba(241, 238, 234, 0.945);
+  cursor: pointer;
+}

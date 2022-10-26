@@ -3,10 +3,15 @@ import './Courses.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import CourseCard from '../Shared/CourseCard/CourseCard';
 import LeftSideBar from '../Shared/SideBar/LeftSideBar';
+import { useLoaderData } from 'react-router-dom';
+import CourseSummaryCard from '../Shared/CourseSummaryCard/CourseSummaryCard';
 
 const Courses = () => {
+  const allCourse = useLoaderData();
+
+  console.log(allCourse);
+
   return (
     <Container className="py-5">
       <Row className="g-4">
@@ -14,7 +19,9 @@ const Courses = () => {
           <LeftSideBar></LeftSideBar>
         </Col>
         <Col sm={8} md={8}>
-          <CourseCard></CourseCard>
+          {allCourse.map((course, index) => (
+            <CourseSummaryCard key={index} course={course}></CourseSummaryCard>
+          ))}
         </Col>
       </Row>
     </Container>
