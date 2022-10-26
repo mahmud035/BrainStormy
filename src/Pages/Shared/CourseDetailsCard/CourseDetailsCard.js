@@ -9,6 +9,9 @@ import { MdReviews } from 'react-icons/md';
 import { FaUserFriends } from 'react-icons/fa';
 import { BsFillFileEarmarkPdfFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
+import Pdf from 'react-to-pdf';
+
+const ref = React.createRef();
 
 const CourseDetailsCard = ({ course }) => {
   const {
@@ -29,13 +32,23 @@ const CourseDetailsCard = ({ course }) => {
       <div className="pb-4 d-flex justify-content-between ">
         <h2>{title}</h2>
 
-        <BsFillFileEarmarkPdfFill
+        {/* <BsFillFileEarmarkPdfFill
           size={40}
           style={{ cursor: 'pointer', color: '#F40F02' }}
           title="Create PDF"
-        />
+        /> */}
+        <Pdf targetRef={ref} filename="course-details.pdf">
+          {({ toPdf }) => (
+            <BsFillFileEarmarkPdfFill
+              onClick={toPdf}
+              size={40}
+              style={{ cursor: 'pointer', color: '#F40F02' }}
+              title="Create PDF"
+            />
+          )}
+        </Pdf>
       </div>
-      <Card className="mb-4 course-summary-card">
+      <Card className="mb-4 course-summary-card" ref={ref}>
         <Card.Img variant="top" src={image_url} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
