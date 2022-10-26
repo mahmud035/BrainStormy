@@ -1,16 +1,14 @@
 import React from 'react';
-import './Courses.css';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import LeftSideBar from '../Shared/SideBar/LeftSideBar';
 import { useLoaderData } from 'react-router-dom';
 import CourseSummaryCard from '../Shared/CourseSummaryCard/CourseSummaryCard';
+import './Category.css';
+import Container from 'react-bootstrap/Container';
+import { Col, Row } from 'react-bootstrap';
+import LeftSideBar from '../Shared/SideBar/LeftSideBar';
 
-const Courses = () => {
-  const allCourse = useLoaderData();
-
-  // console.log(allCourse);
+const Category = () => {
+  const categoryCourses = useLoaderData();
+  console.log(categoryCourses);
 
   return (
     <Container className="py-5">
@@ -19,7 +17,7 @@ const Courses = () => {
           <LeftSideBar></LeftSideBar>
         </Col>
         <Col sm={8} md={8}>
-          {allCourse.map((course, index) => (
+          {categoryCourses.map((course, index) => (
             <CourseSummaryCard key={index} course={course}></CourseSummaryCard>
           ))}
         </Col>
@@ -28,4 +26,4 @@ const Courses = () => {
   );
 };
 
-export default Courses;
+export default Category;
