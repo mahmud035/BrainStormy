@@ -31,19 +31,24 @@ const router = createBrowserRouter([
         path: '/category/:id',
         element: <Category></Category>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/category/${params.id}`),
+          fetch(
+            `https://brain-stormy-server-side.vercel.app/category/${params.id}`
+          ),
       },
 
       {
         path: '/courses',
         element: <Courses></Courses>,
-        loader: () => fetch('http://localhost:5000/courses'),
+        loader: () =>
+          fetch('https://brain-stormy-server-side.vercel.app/courses'),
       },
       {
         path: '/course/:id',
         element: <CourseDetailsPage></CourseDetailsPage>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/course/${params.id}`),
+          fetch(
+            `https://brain-stormy-server-side.vercel.app/course/${params.id}`
+          ),
       },
       {
         path: '/blog',
@@ -69,7 +74,9 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/checkout/${params.id}`),
+          fetch(
+            `https://brain-stormy-server-side.vercel.app/checkout/${params.id}`
+          ),
       },
       {
         path: '/login',
