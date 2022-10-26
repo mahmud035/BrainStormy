@@ -52,6 +52,14 @@ const router = createBrowserRouter([
         element: <FAQ></FAQ>,
       },
       {
+        path: '/checkout',
+        element: (
+          <PrivateRoutes>
+            <Checkout></Checkout>
+          </PrivateRoutes>
+        ),
+      },
+      {
         path: '/checkout/:id',
         element: (
           <PrivateRoutes>

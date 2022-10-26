@@ -1,12 +1,12 @@
 import { initializeApp } from 'firebase/app';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDUWlvDOHmx6rD8CU3cKyxvsvM02pbE2gE',
-  authDomain: 'brain-stormy-client.firebaseapp.com',
-  projectId: 'brain-stormy-client',
-  storageBucket: 'brain-stormy-client.appspot.com',
-  messagingSenderId: '24073532827',
-  appId: '1:24073532827:web:103220cc20994157355d3e',
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase
