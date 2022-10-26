@@ -1,0 +1,13 @@
+.header-content {
+  height: 100%;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #fff;
+}
+
+.header-content h1 {
+  font-size: 3rem;
+}
