@@ -6,6 +6,7 @@ import Category from '../../Pages/Category/Category';
 import Checkout from '../../Pages/Checkout/Checkout';
 import CourseDetailsPage from '../../Pages/CourseDetailsPage/CourseDetailsPage';
 import Courses from '../../Pages/Courses/Courses';
+import ErrorPage from '../../Pages/ErrorPage/ErrorPage';
 import FAQ from '../../Pages/FAQ/FAQ';
 import Home from '../../Pages/Home/Home';
 import Login from '../../Pages/Login/Login';
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
