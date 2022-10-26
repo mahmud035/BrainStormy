@@ -32,11 +32,6 @@ const CourseDetailsCard = ({ course }) => {
       <div className="pb-4 d-flex justify-content-between ">
         <h2>{title}</h2>
 
-        {/* <BsFillFileEarmarkPdfFill
-          size={40}
-          style={{ cursor: 'pointer', color: '#F40F02' }}
-          title="Create PDF"
-        /> */}
         <Pdf targetRef={ref} filename="course-details.pdf">
           {({ toPdf }) => (
             <BsFillFileEarmarkPdfFill
