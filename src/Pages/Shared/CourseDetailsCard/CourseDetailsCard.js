@@ -4,10 +4,11 @@ import Card from 'react-bootstrap/Card';
 import { FiCheck } from 'react-icons/fi';
 import { BsStarFill } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
-import { Image } from 'react-bootstrap';
+import { Button, Image } from 'react-bootstrap';
 import { MdReviews } from 'react-icons/md';
 import { FaUserFriends } from 'react-icons/fa';
 import { BsFillFileEarmarkPdfFill } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const CourseDetailsCard = ({ course }) => {
   const {
@@ -116,6 +117,12 @@ const CourseDetailsCard = ({ course }) => {
                 </p>
               </div>
             </div>
+          </div>
+
+          <div className="my-5 d-flex justify-content-center">
+            <Link to="/checkout">
+              <Button variant="info">Get Premium Access</Button>
+            </Link>
           </div>
         </Card.Body>
       </Card>
