@@ -4,9 +4,10 @@ import Card from 'react-bootstrap/Card';
 import { FiCheck } from 'react-icons/fi';
 import { BsStarFill } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
-import { Button, Image } from 'react-bootstrap';
+import { Image } from 'react-bootstrap';
 import { MdReviews } from 'react-icons/md';
 import { FaUserFriends } from 'react-icons/fa';
+import { BsFillFileEarmarkPdfFill } from 'react-icons/bs';
 
 const CourseDetailsCard = ({ course }) => {
   const {
@@ -24,11 +25,14 @@ const CourseDetailsCard = ({ course }) => {
 
   return (
     <div>
-      <div className="pb-4 d-flex justify-content-between">
+      <div className="pb-4 d-flex justify-content-between ">
         <h2>{title}</h2>
-        <Button variant="secondary" className="fw-bold">
-          PDF
-        </Button>
+
+        <BsFillFileEarmarkPdfFill
+          size={40}
+          style={{ cursor: 'pointer', color: '#F40F02' }}
+          title="Create PDF"
+        />
       </div>
       <Card className="mb-4 course-summary-card">
         <Card.Img variant="top" src={image_url} />
