@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import './Checkout.css';
 
@@ -7,6 +7,8 @@ const Checkout = () => {
   const course = useLoaderData();
   const { title, price } = course || {};
   console.log(course);
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,6 +22,8 @@ const Checkout = () => {
     toast.success('Thank you for staying with us!');
 
     form.reset();
+
+    navigate('/courses');
   };
 
   return (
