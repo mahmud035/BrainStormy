@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import { CirclesWithBar } from 'react-loader-spinner';
 
 const PrivateRoutes = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
@@ -8,10 +9,35 @@ const PrivateRoutes = ({ children }) => {
   const location = useLocation();
 
   if (loading) {
-    return <h3>Loading....</h3>;
+    return (
+      <CirclesWithBar
+        height="60"
+        width="60"
+        color="#38D4C6"
+        wrapperStyle={{}}
+        wrapperClass="d-flex justify-content-center align-items-center mt-5"
+        visible={true}
+        outerCircleColor=""
+        innerCircleColor=""
+        barColor=""
+        ariaLabel="circles-with-bar-loading"
+      />
+    );
   }
 
   if (user && user.uid) {
+    <CirclesWithBar
+      height="60"
+      width="60"
+      color="#38D4C6"
+      wrapperStyle={{}}
+      wrapperClass=""
+      visible={false}
+      outerCircleColor=""
+      innerCircleColor=""
+      barColor=""
+      ariaLabel="circles-with-bar-loading"
+    />;
     return children;
   }
 
