@@ -11,9 +11,9 @@
 
 .social-accounts-sign-up p:nth-child(1),
 .social-accounts-sign-up p:nth-child(3) {
-  height: 2px;
+  height: 1.5px;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.36);
+  background-color: #fff;
 }
 
 .btn-register {

@@ -146,7 +146,7 @@ const Register = () => {
           <div className="social-accounts-sign-up">
             <p></p>
             <p className="text-center">
-              <small>Or</small>
+              <small className="fw-semibold">Or</small>
             </p>
             <p></p>
           </div>
