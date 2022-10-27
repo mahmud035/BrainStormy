@@ -31,13 +31,13 @@ const Checkout = () => {
     //   <h3>Course Name: {course && <h2>{title}</h2>}</h3>
     // </div>
 
-    <div>
+    <div className="checkout-page">
       <div className="d-flex flex-column justify-content-center text-center align-items-center pt-5">
         <h1>Course Name: {course && <h2>{title}</h2>}</h1>
       </div>
       <div>
         <div className="container min-vh-100">
-          <main>
+          <main className="checkout-form mt-5">
             <div className="row g-5 pt-5">
               <div className="col-md-5 col-lg-4 order-md-last">
                 <h4 className="d-flex justify-content-between align-items-center mb-3">
@@ -49,7 +49,7 @@ const Checkout = () => {
                     <div>
                       <h6 className="my-0">{title}</h6>
                     </div>
-                    <span className="text-muted">{price}</span>
+                    <span>{price}</span>
                   </li>
                 </ul>
               </div>
@@ -117,7 +117,7 @@ const Checkout = () => {
                   <hr className="my-4" />
 
                   <button
-                    className="w-100 btn btn-primary btn-lg"
+                    className="w-100 btn btn-primary btn-lg fw-semibold btn-sign-in"
                     type="submit"
                   >
                     Continue to checkout
