@@ -137,7 +137,11 @@ const Header = () => {
                       </Link>
 
                       <Link to="/login">
-                        <Button onClick={handleLogOut} variant="info">
+                        <Button
+                          onClick={handleLogOut}
+                          variant="info"
+                          className="btn-log-out fw-semibold text-white"
+                        >
                           Log Out
                         </Button>
                       </Link>

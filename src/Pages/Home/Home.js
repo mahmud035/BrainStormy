@@ -26,7 +26,12 @@ const Home = () => {
             Artificial Intelligence, data science and more!
           </p>
           <Link to="/courses">
-            <Button variant="info">See Courses</Button>
+            <Button
+              variant="info"
+              className="btn-see-courses fw-semibold text-white"
+            >
+              See Courses
+            </Button>
           </Link>
         </div>
       </div>

@@ -11,3 +11,15 @@
 .header-content h1 {
   font-size: 3rem;
 }
+
+.btn-see-courses {
+  background-color: #6f00ed;
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-see-courses:hover {
+  background-color: #9f2bc1;
+}
