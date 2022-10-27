@@ -17,9 +17,6 @@ const PrivateRoutes = ({ children }) => {
         wrapperStyle={{}}
         wrapperClass="d-flex justify-content-center align-items-center mt-5"
         visible={true}
-        outerCircleColor=""
-        innerCircleColor=""
-        barColor=""
         ariaLabel="circles-with-bar-loading"
       />
     );
@@ -33,9 +30,6 @@ const PrivateRoutes = ({ children }) => {
       wrapperStyle={{}}
       wrapperClass=""
       visible={false}
-      outerCircleColor=""
-      innerCircleColor=""
-      barColor=""
       ariaLabel="circles-with-bar-loading"
     />;
     return children;
