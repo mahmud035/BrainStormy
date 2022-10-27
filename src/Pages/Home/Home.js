@@ -5,7 +5,7 @@ import bg from '../../assets/images/bg.jpg';
 const Home = () => {
   const myStyle = {
     backgroundImage: `url(${bg})`,
-    minHeight: `calc(100vh - 74px)`,
+    minHeight: `calc(100vh - 72px)`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center center',
