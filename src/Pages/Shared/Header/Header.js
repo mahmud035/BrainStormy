@@ -91,17 +91,23 @@ const Header = () => {
                     style={{ marginLeft: 'auto !important' }}
                   >
                     {darkMode ? (
-                      <HiSun
-                        className="text-white"
-                        size={32}
-                        style={{ cursor: 'pointer' }}
-                      />
+                      <>
+                        <HiSun
+                          className="text-white"
+                          size={32}
+                          style={{ cursor: 'pointer' }}
+                          title="Switch Light"
+                        />
+                      </>
                     ) : (
-                      <BiMoon
-                        className="text-white"
-                        size={32}
-                        style={{ cursor: 'pointer' }}
-                      />
+                      <>
+                        <BiMoon
+                          className="text-white"
+                          size={32}
+                          style={{ cursor: 'pointer' }}
+                          title="Switch Dark"
+                        />
+                      </>
                     )}
                   </div>
                 </Nav>
