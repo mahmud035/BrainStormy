@@ -155,8 +155,8 @@ const Register = () => {
             <ButtonGroup vertical>
               <Button
                 onClick={handleGoogleSignIn}
-                className="mb-3 rounded "
-                variant="outline-primary"
+                className="mb-3 rounded text-white"
+                variant="outline-info"
               >
                 <FcGoogle size={20} className="me-3 mb-1 " />
                 <span>Continue with Google</span>
@@ -164,7 +164,7 @@ const Register = () => {
 
               <Button
                 onClick={handleGithubSignIn}
-                className=" rounded "
+                className=" rounded text-white"
                 variant="outline-dark"
               >
                 <BsGithub size={20} className="me-3 mb-1" />
