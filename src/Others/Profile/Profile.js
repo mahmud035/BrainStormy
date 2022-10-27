@@ -1,4 +1,5 @@
 import React, { useContext, useRef, useState } from 'react';
+import './Profile.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
@@ -25,7 +26,7 @@ const Profile = () => {
   };
 
   return (
-    <div>
+    <div className="min-vh-100">
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Your name</Form.Label>

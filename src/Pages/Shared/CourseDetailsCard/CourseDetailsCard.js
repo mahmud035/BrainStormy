@@ -43,7 +43,12 @@ const CourseDetailsCard = ({ course }) => {
           )}
         </Pdf>
       </div>
-      <Card className="mb-4 course-summary-card" ref={ref}>
+      <Card
+        className="mb-4 course-summary-card"
+        ref={ref}
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <Card.Img variant="top" src={image_url} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>

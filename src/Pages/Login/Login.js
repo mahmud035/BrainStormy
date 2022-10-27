@@ -51,7 +51,7 @@ const Login = () => {
 
   return (
     <div className="container form-page">
-      <div className="pt-5 form-container ">
+      <div className="pt-5 form-container">
         <div className="text-center">
           <h2>Sign In</h2>
           <p className="text-muted">Sign in to access your account</p>

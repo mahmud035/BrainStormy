@@ -85,7 +85,7 @@ const Register = () => {
 
   return (
     <div className="container form-page pt-5">
-      <div className="pt-5 px-4 form-container ">
+      <div className="pt-5 px-4 form-container">
         <div className="text-center">
           <h2>Please Register</h2>
           <p className="text-muted">Create a new account</p>

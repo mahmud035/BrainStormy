@@ -13,7 +13,7 @@ const Courses = () => {
   // console.log(allCourse);
 
   return (
-    <Container className="py-5">
+    <Container className="py-5" data-aos="fade-up" data-aos-duration="1000">
       <Row className="g-4">
         <Col sm={4} md={4}>
           <LeftSideBar></LeftSideBar>

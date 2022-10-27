@@ -11,7 +11,11 @@ const CourseSummaryCard = ({ course }) => {
 
   return (
     <Link to={`/course/${_id}`} className="text-decoration-none text-black">
-      <Card className="mb-4 course-summary-card">
+      <Card
+        className="mb-4 course-summary-card"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <Card.Img variant="top" src={image_url} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
