@@ -84,7 +84,7 @@ const Header = () => {
                   <NavLink to="/courses">Courses</NavLink>
                   <NavLink to="/blog">Blog</NavLink>
                   <NavLink to="/faq">FAQ</NavLink>
-                  <NavLink to="/checkout">Checkout</NavLink>
+                  {user?.email && <NavLink to="/checkout">Checkout</NavLink>}
 
                   <div
                     onClick={() => setDarkMode(!darkMode)}

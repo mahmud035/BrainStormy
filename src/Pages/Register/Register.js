@@ -24,6 +24,10 @@ const Register = () => {
     const password = form.password.value;
     console.log(name, photoURL, email, password);
 
+    if (!photoURL) {
+      toast.info('Please provide a valid photo URL');
+    }
+
     createUser(email, password)
       .then((result) => {
         const user = result.user;
@@ -84,7 +88,7 @@ const Register = () => {
   };
 
   return (
-    <div className="container form-page pt-5">
+    <div className="container form-page pt-5 pb-5">
       <div className="pt-5 px-4 form-container">
         <div className="text-center">
           <h2>Please Register</h2>
@@ -93,13 +97,18 @@ const Register = () => {
         <Form onSubmit={handleSubmit} className=" d-flex flex-column  py-3">
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Full Name </Form.Label>
-            <Form.Control type="text" name="name" placeholder="User Name " />
+            <Form.Control
+              type="text"
+              name="name"
+              placeholder="Your name "
+              required
+            />
             <Form.Text className="text-muted"></Form.Text>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Photo URL </Form.Label>
-            <Form.Control type="text" name="photo" placeholder="Photo URL " />
+            <Form.Control type="text" name="photo" placeholder="Photo URL" />
             <Form.Text className="text-muted"></Form.Text>
           </Form.Group>
 
@@ -119,7 +128,7 @@ const Register = () => {
             <Form.Control
               type="password"
               name="password"
-              placeholder="Password"
+              placeholder="******"
               required
             />
             <Form.Text className="text-muted"></Form.Text>

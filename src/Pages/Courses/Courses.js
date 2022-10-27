@@ -19,6 +19,7 @@ const Courses = () => {
           <LeftSideBar></LeftSideBar>
         </Col>
         <Col sm={8} md={8}>
+          <h3 className="pb-2">{allCourse.length} results found</h3>
           {allCourse.map((course, index) => (
             <CourseSummaryCard key={index} course={course}></CourseSummaryCard>
           ))}

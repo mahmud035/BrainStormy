@@ -16,7 +16,7 @@ const LeftSideBar = () => {
 
   return (
     <div>
-      <h4>Top Categories</h4>
+      <h3 className="pb-3">Course Categories</h3>
       <div>
         {categories.map((category, index) => (
           <p key={index}>
