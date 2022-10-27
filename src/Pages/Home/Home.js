@@ -1,11 +1,13 @@
 import React from 'react';
 import './Home.css';
 import bg from '../../assets/images/bg.jpg';
+import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 const Home = () => {
   const myStyle = {
     backgroundImage: `url(${bg})`,
-    minHeight: `calc(100vh - 72px)`,
+    minHeight: `calc(100vh - 75px)`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center center',
@@ -23,6 +25,9 @@ const Home = () => {
             thousands of courses and millions of students. Learn programming,
             Artificial Intelligence, data science and more!
           </p>
+          <Link to="/courses">
+            <Button variant="info">See Courses</Button>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,3 +1,14 @@
+.navbar-container {
+  height: 75px;
+}
+
+.navbar-container,
+.navbar-off-canvas {
+  background-color: #112b3c;
+  background-color: #1d3e53;
+  color: #fff;
+}
+
 .nav-items {
   display: flex;
   align-items: center;
@@ -7,6 +18,7 @@
 .nav-items a {
   text-decoration: none;
   color: #fff;
+  font-weight: 500;
 }
 
 .nav-items a.active {

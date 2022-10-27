@@ -30,7 +30,7 @@ const CourseDetailsCard = ({ course }) => {
   return (
     <div>
       <div className="pb-4 d-flex justify-content-between ">
-        <h2>{title}</h2>
+        <h2 className="text-white">{title}</h2>
 
         <Pdf targetRef={ref} filename="course-details.pdf">
           {({ toPdf }) => (

@@ -15,7 +15,7 @@ const LeftSideBar = () => {
   // console.log(categories);
 
   return (
-    <div>
+    <div className="left-sidebar">
       <h3 className="pb-3">Course Categories</h3>
       <div>
         {categories.map((category, index) => (

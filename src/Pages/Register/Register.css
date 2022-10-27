@@ -1,3 +1,7 @@
+.register-page-container {
+  background-color: #1a374d;
+}
+
 .social-accounts-sign-up {
   display: flex;
   justify-content: space-between;
@@ -10,4 +14,16 @@
   height: 2px;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.36);
+}
+
+.btn-register {
+  background-color: #069a8e;
+  border: none;
+  outline: none;
+  padding: 8px 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-register:hover {
+  background-color: #09afa1;
 }

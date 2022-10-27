@@ -12,16 +12,18 @@ const CourseDetailsPage = () => {
   console.log(course);
 
   return (
-    <Container className="py-5">
-      <Row className="g-4">
-        <Col sm={4} md={4}>
-          <LeftSideBar></LeftSideBar>
-        </Col>
-        <Col sm={8} md={8}>
-          <CourseDetailsCard course={course}></CourseDetailsCard>
-        </Col>
-      </Row>
-    </Container>
+    <div className="course-details-page">
+      <Container className="py-5">
+        <Row className="g-4">
+          <Col sm={4} md={4}>
+            <LeftSideBar></LeftSideBar>
+          </Col>
+          <Col sm={8} md={8}>
+            <CourseDetailsCard course={course}></CourseDetailsCard>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 };
 

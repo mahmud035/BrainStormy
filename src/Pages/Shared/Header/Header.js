@@ -28,13 +28,7 @@ const Header = () => {
   return (
     <>
       {['lg'].map((expand) => (
-        <Navbar
-          key={expand}
-          bg="dark"
-          variant="dark"
-          expand={expand}
-          className="py-3"
-        >
+        <Navbar key={expand} expand={expand} className="py-3 navbar-container">
           <Container>
             <Link to="/">
               <Navbar.Brand>
@@ -45,12 +39,17 @@ const Header = () => {
                   height="40"
                   className="d-inline-block align-center me-2"
                 />
-                <span className="d-inline-block "> BrainStormy</span>
+                <span className="d-inline-block fw-semibold text-white fs-4">
+                  BrainStormy
+                </span>
               </Navbar.Brand>
             </Link>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Toggle
+              aria-controls={`offcanvasNavbar-expand-${expand}`}
+              className=" text-dark bg-white"
+            />
             <Navbar.Offcanvas
-              className="navbar-dark bg-dark"
+              className="navbar-off-canvas"
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
@@ -66,7 +65,9 @@ const Header = () => {
                         height="40"
                         className="d-inline-block align-center me-2"
                       />
-                      <span className="d-inline-block "> BrainStormy</span>
+                      <span className="d-inline-block text-white">
+                        BrainStormy
+                      </span>
                     </Navbar.Brand>
                   </Link>
                 </Offcanvas.Title>
@@ -144,10 +145,20 @@ const Header = () => {
                   ) : (
                     <>
                       <Link to="/login">
-                        <Button variant="success">Login</Button>
+                        <Button
+                          variant="success"
+                          className="btn-sign-in fw-semibold text-white"
+                        >
+                          Login
+                        </Button>
                       </Link>
                       <Link to="/register">
-                        <Button variant="info">Register</Button>
+                        <Button
+                          variant="info"
+                          className="btn-register fw-semibold  text-white"
+                        >
+                          Register
+                        </Button>
                       </Link>
                     </>
                   )}
@@ -162,3 +173,8 @@ const Header = () => {
 };
 
 export default Header;
+
+//  bg = 'dark';
+//  variant = 'dark';
+
+// navbar-dark bg-dark

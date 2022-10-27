@@ -88,95 +88,100 @@ const Register = () => {
   };
 
   return (
-    <div className="container form-page pt-5 pb-5">
-      <div className="pt-5 px-4 form-container">
-        <div className="text-center">
-          <h2>Please Register</h2>
-          <p className="text-muted">Create a new account</p>
-        </div>
-        <Form onSubmit={handleSubmit} className=" d-flex flex-column  py-3">
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Full Name </Form.Label>
-            <Form.Control
-              type="text"
-              name="name"
-              placeholder="Your name "
-              required
-            />
-            <Form.Text className="text-muted"></Form.Text>
-          </Form.Group>
+    <div className="register-page-container">
+      <div className="container form-page pt-5 pb-5">
+        <div className="pt-5 px-4 form-container">
+          <div className="text-center">
+            <h2>Please Register</h2>
+            <p className="text-white-50">Create a new account</p>
+          </div>
+          <Form onSubmit={handleSubmit} className=" d-flex flex-column  py-3">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label className="fw-semibold">Full Name </Form.Label>
+              <Form.Control
+                type="text"
+                name="name"
+                placeholder="Your name "
+                required
+              />
+            </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Photo URL </Form.Label>
-            <Form.Control type="text" name="photo" placeholder="Photo URL" />
-            <Form.Text className="text-muted"></Form.Text>
-          </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label className="fw-semibold">Photo URL </Form.Label>
+              <Form.Control type="text" name="photo" placeholder="Photo URL" />
+            </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email </Form.Label>
-            <Form.Control
-              type="email"
-              name="email"
-              placeholder="Enter email"
-              required
-            />
-            <Form.Text className="text-muted"></Form.Text>
-          </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label className="fw-semibold">Email </Form.Label>
+              <Form.Control
+                type="email"
+                name="email"
+                placeholder="Enter email"
+                required
+              />
+            </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              name="password"
-              placeholder="******"
-              required
-            />
-            <Form.Text className="text-muted"></Form.Text>
-          </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label className="fw-semibold">Password</Form.Label>
+              <Form.Control
+                type="password"
+                name="password"
+                placeholder="******"
+                required
+              />
+            </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
-          </Form.Group>
-          <Button className="d-block w-100" variant="primary" type="submit">
-            Register
-          </Button>
-        </Form>
+            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+              <Form.Check type="checkbox" label="Check me out" />
+            </Form.Group>
+            <Button
+              className="d-block w-100 fw-semibold btn-register"
+              variant="primary"
+              type="submit"
+            >
+              Register
+            </Button>
+          </Form>
 
-        <div className="social-accounts-sign-up">
-          <p></p>
+          <div className="social-accounts-sign-up">
+            <p></p>
+            <p className="text-center">
+              <small>Or</small>
+            </p>
+            <p></p>
+          </div>
+
+          <div className="text-center py-3">
+            <ButtonGroup vertical>
+              <Button
+                onClick={handleGoogleSignIn}
+                className="mb-3 rounded "
+                variant="outline-primary"
+              >
+                <FcGoogle size={20} className="me-3 mb-1 " />
+                <span>Continue with Google</span>
+              </Button>
+
+              <Button
+                onClick={handleGithubSignIn}
+                className=" rounded "
+                variant="outline-dark"
+              >
+                <BsGithub size={20} className="me-3 mb-1" />
+                <span>Continue with Github</span>
+              </Button>
+            </ButtonGroup>
+          </div>
+
           <p className="text-center">
-            <small>Or</small>
+            <small className="text-white-50">
+              Already have an account? &nbsp;
+              <Link to="/login" className="text-white fw-semibold">
+                Login
+              </Link>
+            </small>
           </p>
-          <p></p>
         </div>
-
-        <div className="text-center py-3">
-          <ButtonGroup vertical>
-            <Button
-              onClick={handleGoogleSignIn}
-              className="mb-3 rounded "
-              variant="outline-primary"
-            >
-              <FcGoogle size={20} className="me-3 mb-1 " />
-              <span>Continue with Google</span>
-            </Button>
-
-            <Button
-              onClick={handleGithubSignIn}
-              className=" rounded "
-              variant="outline-dark"
-            >
-              <BsGithub size={20} className="me-3 mb-1" />
-              <span>Continue with Github</span>
-            </Button>
-          </ButtonGroup>
-        </div>
-
-        <p className="text-center">
-          <small className="text-muted">
-            Already have an account? <Link to="/login">Login</Link>
-          </small>
-        </p>
       </div>
     </div>
   );

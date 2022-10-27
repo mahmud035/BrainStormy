@@ -11,20 +11,27 @@ const Category = () => {
   console.log(categoryCourses);
 
   return (
-    <Container className="py-5">
-      <Row className="g-4">
-        <Col sm={4} md={4}>
-          <LeftSideBar></LeftSideBar>
-        </Col>
-        <Col sm={8} md={8}>
-          <h2 className="pb-2">{categoryCourses.length} results found</h2>
+    <div className="category-page">
+      <Container className="py-5">
+        <Row className="g-4">
+          <Col sm={4} md={4}>
+            <LeftSideBar></LeftSideBar>
+          </Col>
+          <Col sm={8} md={8}>
+            <h2 className="pb-2 text-white">
+              {categoryCourses.length} results found
+            </h2>
 
-          {categoryCourses.map((course, index) => (
-            <CourseSummaryCard key={index} course={course}></CourseSummaryCard>
-          ))}
-        </Col>
-      </Row>
-    </Container>
+            {categoryCourses.map((course, index) => (
+              <CourseSummaryCard
+                key={index}
+                course={course}
+              ></CourseSummaryCard>
+            ))}
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 };
 
