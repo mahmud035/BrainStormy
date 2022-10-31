@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Home.css';
 import bg from '../../assets/images/bg.jpg';
 import { Link } from 'react-router-dom';
@@ -15,6 +15,11 @@ const Home = () => {
     backgroundBlendMode: 'overlay',
     position: 'relative',
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <div style={myStyle}>

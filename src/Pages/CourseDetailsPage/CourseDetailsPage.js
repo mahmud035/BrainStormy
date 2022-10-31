@@ -5,9 +5,14 @@ import { Col, Row } from 'react-bootstrap';
 import LeftSideBar from '../Shared/SideBar/LeftSideBar';
 import CourseDetailsCard from '../Shared/CourseDetailsCard/CourseDetailsCard';
 import { useLoaderData } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const CourseDetailsPage = () => {
   const course = useLoaderData();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   console.log(course);
 

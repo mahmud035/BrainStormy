@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import './Checkout.css';
@@ -9,6 +10,10 @@ const Checkout = () => {
   console.log(course);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();

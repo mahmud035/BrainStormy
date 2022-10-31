@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Courses.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -9,6 +9,10 @@ import CourseSummaryCard from '../Shared/CourseSummaryCard/CourseSummaryCard';
 
 const Courses = () => {
   const allCourse = useLoaderData();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // console.log(allCourse);
 

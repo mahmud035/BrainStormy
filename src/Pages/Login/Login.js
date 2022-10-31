@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Login.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -9,6 +9,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 const Login = () => {
   const { logIn, passwordReset } = useContext(AuthContext);
   const [userEmail, setUserEmail] = useState('');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const navigate = useNavigate();
   const location = useLocation();

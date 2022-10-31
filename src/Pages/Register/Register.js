@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import './Register.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -12,7 +12,12 @@ import { BsGithub } from 'react-icons/bs';
 const Register = () => {
   const { createUser, googleSignIn, githubSignIn, updateUserProfile } =
     useContext(AuthContext);
+
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
