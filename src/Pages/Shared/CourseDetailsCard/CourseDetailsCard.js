@@ -1,15 +1,14 @@
 import React from 'react';
-import './CourseDetailsCard.css';
-import Card from 'react-bootstrap/Card';
-import { FiCheck } from 'react-icons/fi';
-import { BsStarFill } from 'react-icons/bs';
-import { GoPrimitiveDot } from 'react-icons/go';
 import { Button, Image } from 'react-bootstrap';
-import { MdReviews } from 'react-icons/md';
+import Card from 'react-bootstrap/Card';
+import { BsFillFileEarmarkPdfFill, BsStarFill } from 'react-icons/bs';
 import { FaUserFriends } from 'react-icons/fa';
-import { BsFillFileEarmarkPdfFill } from 'react-icons/bs';
+import { FiCheck } from 'react-icons/fi';
+import { GoPrimitiveDot } from 'react-icons/go';
+import { MdReviews } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import Pdf from 'react-to-pdf';
+import './CourseDetailsCard.css';
 
 const ref = React.createRef();
 
@@ -78,23 +77,19 @@ const CourseDetailsCard = ({ course }) => {
 
           <div className="pb-4">
             <h5>What you'll learn</h5>
-            {learn?.map((topic, index) => (
-              <>
-                <p key={index} className="mb-2">
-                  <FiCheck className="me-2" /> {topic}
-                </p>
-              </>
+            {learn?.map((topic) => (
+              <p key={topic} className="mb-2">
+                <FiCheck className="me-2" /> {topic}
+              </p>
             ))}
           </div>
 
           <div className="pb-4">
             <h5>Requirements</h5>
-            {requirements?.map((topic, index) => (
-              <>
-                <p key={index} className="mb-2">
-                  <GoPrimitiveDot className="me-2" /> {topic}
-                </p>
-              </>
+            {requirements?.map((topic) => (
+              <p key={topic} className="mb-2">
+                <GoPrimitiveDot className="me-2" /> {topic}
+              </p>
             ))}
           </div>
 

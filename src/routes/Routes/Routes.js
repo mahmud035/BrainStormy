@@ -7,7 +7,7 @@ import Checkout from '../../Pages/Checkout/Checkout';
 import CourseDetailsPage from '../../Pages/CourseDetailsPage/CourseDetailsPage';
 import Courses from '../../Pages/Courses/Courses';
 import ErrorPage from '../../Pages/ErrorPage/ErrorPage';
-import FAQ from '../../Pages/FAQ/FAQ';
+import FaqComponent from '../../Pages/Faq/Faq';
 import Home from '../../Pages/Home/Home';
 import Login from '../../Pages/Login/Login';
 import Register from '../../Pages/Register/Register';
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/faq',
-        element: <FAQ></FAQ>,
+        element: <FaqComponent />,
       },
       {
         path: '/checkout',

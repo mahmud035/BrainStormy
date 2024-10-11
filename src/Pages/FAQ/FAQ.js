@@ -1,8 +1,7 @@
-import React from 'react';
-import './FAQ.css';
 import Accordion from 'react-bootstrap/Accordion';
+import './Faq.css';
 
-const FAQ = () => {
+const FaqComponent = () => {
   return (
     <div className="accordion-container">
       <h1>Frequently Asked Questions</h1>
@@ -71,4 +70,4 @@ const FAQ = () => {
   );
 };
 
-export default FAQ;
+export default FaqComponent;

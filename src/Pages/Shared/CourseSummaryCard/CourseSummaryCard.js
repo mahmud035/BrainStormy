@@ -1,9 +1,9 @@
 import React from 'react';
-import './CourseSummaryCard.css';
 import Card from 'react-bootstrap/Card';
-import { FiCheck } from 'react-icons/fi';
 import { BsStarFill } from 'react-icons/bs';
+import { FiCheck } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import './CourseSummaryCard.css';
 
 const CourseSummaryCard = ({ course }) => {
   const { _id, image_url, title, intro_description, learn, price, rating } =
@@ -21,12 +21,10 @@ const CourseSummaryCard = ({ course }) => {
           <Card.Title>{title}</Card.Title>
           <Card.Text>{intro_description}</Card.Text>
           <h5>What you'll learn</h5>
-          {learn.map((topic, index) => (
-            <>
-              <p key={index} className="mb-2">
-                <FiCheck className="me-2" /> {topic}
-              </p>
-            </>
+          {learn.map((topic) => (
+            <p key={topic} className="mb-2">
+              <FiCheck className="me-2" /> {topic}
+            </p>
           ))}
 
           <div className="pt-4">

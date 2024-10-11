@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
+import { CirclesWithBar } from 'react-loader-spinner';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
-import { CirclesWithBar } from 'react-loader-spinner';
 
 const PrivateRoutes = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
@@ -22,7 +22,7 @@ const PrivateRoutes = ({ children }) => {
     );
   }
 
-  if (user && user.uid)  return children;
+  if (user && user?.uid) return children;
 
   return <Navigate to="/login" state={{ from: location }} replace></Navigate>;
 };

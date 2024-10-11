@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { Button, Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -91,23 +91,19 @@ const Header = () => {
                     style={{ marginLeft: 'auto !important' }}
                   >
                     {darkMode ? (
-                      <>
-                        <HiSun
-                          className="text-white"
-                          size={32}
-                          style={{ cursor: 'pointer' }}
-                          title="Switch Light"
-                        />
-                      </>
+                      <HiSun
+                        className="text-white"
+                        size={32}
+                        style={{ cursor: 'pointer' }}
+                        title="Switch Light"
+                      />
                     ) : (
-                      <>
-                        <BiMoon
-                          className="text-white"
-                          size={32}
-                          style={{ cursor: 'pointer' }}
-                          title="Switch Dark"
-                        />
-                      </>
+                      <BiMoon
+                        className="text-white"
+                        size={32}
+                        style={{ cursor: 'pointer' }}
+                        title="Switch Dark"
+                      />
                     )}
                   </div>
                 </Nav>
@@ -117,19 +113,17 @@ const Header = () => {
                     <>
                       <Link to="/profile">
                         {user?.photoURL ? (
-                          <>
-                            <OverlayTrigger
-                              key="bottom"
-                              placement="bottom"
-                              overlay={<Tooltip>{user?.displayName}</Tooltip>}
-                            >
-                              <Image
-                                roundedCircle
-                                src={user?.photoURL}
-                                style={{ width: '40px', height: '40px' }}
-                              ></Image>
-                            </OverlayTrigger>
-                          </>
+                          <OverlayTrigger
+                            key="bottom"
+                            placement="bottom"
+                            overlay={<Tooltip>{user?.displayName}</Tooltip>}
+                          >
+                            <Image
+                              roundedCircle
+                              src={user?.photoURL}
+                              style={{ width: '40px', height: '40px' }}
+                            ></Image>
+                          </OverlayTrigger>
                         ) : (
                           <FaUserCircle size={36} title={user?.displayName} />
                         )}
@@ -176,8 +170,3 @@ const Header = () => {
 };
 
 export default Header;
-
-//  bg = 'dark';
-//  variant = 'dark';
-
-// navbar-dark bg-dark

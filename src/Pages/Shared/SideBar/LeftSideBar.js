@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './LeftSideBar.css';
 
@@ -15,8 +15,8 @@ const LeftSideBar = () => {
     <div className="left-sidebar">
       <h3 className="pb-3">Course Categories</h3>
       <div>
-        {categories.map((category, index) => (
-          <p key={index}>
+        {categories.map((category) => (
+          <p key={category.id}>
             <Link to={`/category/${category.id}`} className="category-name">
               {category.name}
             </Link>
