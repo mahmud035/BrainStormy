@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import './Login.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { AuthContext } from '../../context/AuthProvider/AuthProvider';
-import { toast } from 'react-toastify';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import './Login.css';
 
 const Login = () => {
   const { logIn, passwordReset } = useContext(AuthContext);
@@ -29,21 +29,15 @@ const Login = () => {
 
     logIn(email, password)
       .then((result) => {
-        const user = result.user;
-        console.log(user);
-
         toast.success('Login Successfully');
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.log(error);
         toast.error(error.message);
       });
   };
 
-  // console.log(userEmail);
   const handlePasswordReset = () => {
-    console.log(userEmail);
     passwordReset(userEmail)
       .then(() => {
         toast.info('Password reset email sent!');

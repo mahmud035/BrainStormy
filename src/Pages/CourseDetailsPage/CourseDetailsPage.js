@@ -1,11 +1,10 @@
-import React from 'react';
-import './CourseDetailsPage.css';
-import Container from 'react-bootstrap/Container';
-import { Col, Row } from 'react-bootstrap';
-import LeftSideBar from '../Shared/SideBar/LeftSideBar';
-import CourseDetailsCard from '../Shared/CourseDetailsCard/CourseDetailsCard';
-import { useLoaderData } from 'react-router-dom';
 import { useEffect } from 'react';
+import { Col, Row } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import { useLoaderData } from 'react-router-dom';
+import CourseDetailsCard from '../Shared/CourseDetailsCard/CourseDetailsCard';
+import LeftSideBar from '../Shared/SideBar/LeftSideBar';
+import './CourseDetailsPage.css';
 
 const CourseDetailsPage = () => {
   const course = useLoaderData();
@@ -13,8 +12,6 @@ const CourseDetailsPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  console.log(course);
 
   return (
     <div className="course-details-page">

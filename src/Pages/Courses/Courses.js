@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import './Courses.css';
+import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import LeftSideBar from '../Shared/SideBar/LeftSideBar';
 import { useLoaderData } from 'react-router-dom';
 import CourseSummaryCard from '../Shared/CourseSummaryCard/CourseSummaryCard';
+import LeftSideBar from '../Shared/SideBar/LeftSideBar';
+import './Courses.css';
 
 const Courses = () => {
   const allCourse = useLoaderData();
@@ -13,8 +13,6 @@ const Courses = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  // console.log(allCourse);
 
   return (
     <div className="course-page">
@@ -29,7 +27,7 @@ const Courses = () => {
             </h3>
             {allCourse.map((course, index) => (
               <CourseSummaryCard
-                key={index}
+                key={course._id}
                 course={course}
               ></CourseSummaryCard>
             ))}

@@ -1,7 +1,5 @@
-import React from 'react';
 import { Button, Image } from 'react-bootstrap';
 import { Link, useRouteError } from 'react-router-dom';
-import './ErrorPage.css';
 import notFound from '../../assets/images/notFound.png';
 
 const ErrorPage = () => {

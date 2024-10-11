@@ -1,20 +1,19 @@
-import React, { useContext } from 'react';
-import './Header.css';
+import React, { useContext, useState } from 'react';
+import { Button, Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import logo from '../../../assets/images/logo.png';
-import { Link, NavLink } from 'react-router-dom';
-import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
-import { Button, Image } from 'react-bootstrap';
-import { FaUserCircle } from 'react-icons/fa';
-import { toast } from 'react-toastify';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
-import { HiSun } from 'react-icons/hi';
 import { BiMoon } from 'react-icons/bi';
-import { useState } from 'react';
+import { FaUserCircle } from 'react-icons/fa';
+import { HiSun } from 'react-icons/hi';
+import { Link, NavLink } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import logo from '../../../assets/images/logo.png';
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
+import './Header.css';
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -88,7 +87,7 @@ const Header = () => {
                   {user?.email && <NavLink to="/checkout">Checkout</NavLink>}
 
                   <div
-                    onClick={() => setDarkMode(!darkMode)}
+                    onClick={(e) => setDarkMode(!darkMode)}
                     style={{ marginLeft: 'auto !important' }}
                   >
                     {darkMode ? (

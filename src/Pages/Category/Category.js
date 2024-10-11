@@ -1,14 +1,13 @@
 import React from 'react';
+import { Col, Row } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
 import { useLoaderData } from 'react-router-dom';
 import CourseSummaryCard from '../Shared/CourseSummaryCard/CourseSummaryCard';
-import './Category.css';
-import Container from 'react-bootstrap/Container';
-import { Col, Row } from 'react-bootstrap';
 import LeftSideBar from '../Shared/SideBar/LeftSideBar';
+import './Category.css';
 
 const Category = () => {
   const categoryCourses = useLoaderData();
-  console.log(categoryCourses);
 
   return (
     <div className="category-page">
@@ -24,7 +23,7 @@ const Category = () => {
 
             {categoryCourses.map((course, index) => (
               <CourseSummaryCard
-                key={index}
+                key={course._id}
                 course={course}
               ></CourseSummaryCard>
             ))}

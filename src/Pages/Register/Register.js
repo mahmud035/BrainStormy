@@ -1,13 +1,13 @@
 import React, { useContext, useEffect } from 'react';
-import './Register.css';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import { AuthContext } from '../../context/AuthProvider/AuthProvider';
-import { toast } from 'react-toastify';
-import { Link, useNavigate } from 'react-router-dom';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import { FcGoogle } from 'react-icons/fc';
+import Form from 'react-bootstrap/Form';
 import { BsGithub } from 'react-icons/bs';
+import { FcGoogle } from 'react-icons/fc';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import './Register.css';
 
 const Register = () => {
   const { createUser, googleSignIn, githubSignIn, updateUserProfile } =
@@ -27,7 +27,6 @@ const Register = () => {
     const photoURL = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, photoURL, email, password);
 
     if (!photoURL) {
       toast.info('Please provide a valid photo URL');
@@ -35,15 +34,12 @@ const Register = () => {
 
     createUser(email, password)
       .then((result) => {
-        const user = result.user;
-        console.log(user);
         toast.success('Account Created Successfully');
 
         navigate('/');
         handleUpdateUserProfile(name, photoURL);
       })
       .catch((error) => {
-        console.error(error);
         toast.error(error.message);
       });
   };
@@ -51,8 +47,6 @@ const Register = () => {
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then((result) => {
-        const user = result.user;
-        console.log(user);
         toast.success('Account Created Successfully');
 
         navigate('/');
@@ -66,8 +60,6 @@ const Register = () => {
   const handleGithubSignIn = () => {
     githubSignIn()
       .then((result) => {
-        const user = result.user;
-        console.log(user);
         toast.success('Account Created Successfully');
 
         navigate('/');

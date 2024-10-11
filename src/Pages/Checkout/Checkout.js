@@ -1,4 +1,3 @@
-import React from 'react';
 import { useEffect } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -7,7 +6,6 @@ import './Checkout.css';
 const Checkout = () => {
   const course = useLoaderData();
   const { title, price } = course || {};
-  console.log(course);
 
   const navigate = useNavigate();
 
@@ -19,10 +17,6 @@ const Checkout = () => {
     e.preventDefault();
 
     const form = e.target;
-    const name = form.name.value;
-    const contactNumber = form.contact.value;
-    const address = form.address.value;
-    console.log(name, contactNumber, address);
 
     toast.success('Thank you for staying with us!');
 
@@ -32,10 +26,6 @@ const Checkout = () => {
   };
 
   return (
-    // <div className="d-flex flex-column justify-content-center text-center align-items-center min-vh-100">
-    //   <h3>Course Name: {course && <h2>{title}</h2>}</h3>
-    // </div>
-
     <div className="checkout-page">
       <div className="d-flex flex-column justify-content-center text-center align-items-center pt-5">
         <h1>Course Name: {course && <h2>{title}</h2>}</h1>

@@ -1,13 +1,13 @@
 import React, { useContext, useState } from 'react';
-import './Profile.css';
+import { Image } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { AuthContext } from '../../context/AuthProvider/AuthProvider';
-import { Image } from 'react-bootstrap';
-import { toast } from 'react-toastify';
 import { FaUser } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import './Profile.css';
 
 const Profile = () => {
   const { user, updateUserProfile } = useContext(AuthContext);
@@ -15,12 +15,8 @@ const Profile = () => {
   const [email, setEmail] = useState(user?.email);
   const [photoURL, setPhotoURL] = useState(user?.photoURL);
 
-  // const emailRef = useRef(user?.email);
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name, photoURL);
-    // console.log(emailRef.current.value);
 
     const profile = {
       displayName: name,
